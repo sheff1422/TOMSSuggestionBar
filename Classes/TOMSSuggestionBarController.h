@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 TomKnig. All rights reserved.
 //
 
-#import "TOMSCoreDataCollectionViewController.h"
 
 @class TOMSSuggestionBarView;
 @class TOMSSuggestionBar;
