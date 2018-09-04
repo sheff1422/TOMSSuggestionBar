@@ -1,5 +1,7 @@
 platform :ios, '7.0'
 
-pod 'TOMSCoreDataManager'
-pod 'TOMSMorphingLabel'
-pod 'TOMSSuggestionBar', :path => '../'
+target 'TOMSSuggestionBarExample' do
+    pod 'TOMSCoreDataManager'
+    pod 'TOMSMorphingLabel'
+    pod 'TOMSSuggestionBar', :path => '../'
+end

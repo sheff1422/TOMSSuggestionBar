@@ -28,6 +28,7 @@
         [self registerCellClasses];
         self.suggestionBarController = [[TOMSSuggestionBarController alloc] initWithSuggestionBarView:self];
         self.delegate = self.suggestionBarController;
+        self.dataSource = self.suggestionBarController;
     }
     return self;
 }

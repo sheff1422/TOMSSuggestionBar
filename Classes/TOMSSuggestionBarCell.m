@@ -28,6 +28,7 @@
     self.textLabel = [[TOMSMorphingLabel alloc] initWithFrame:self.bounds];
     self.textLabel.textColor = self.tintColor;
     self.textLabel.textAlignment = NSTextAlignmentCenter;
+    self.textLabel.numberOfLines = 0;
     self.textLabel.userInteractionEnabled = NO;
     
     [self addSubview:self.textLabel];

@@ -1,10 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="zIP-v3-Mvq">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="zIP-v3-Mvq">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Base View Controller - Base-->
+        <!--Base-->
         <scene sceneID="eW4-VA-ReT">
             <objects>
                 <viewController id="gwU-hj-TGx" customClass="BaseViewController" sceneMemberID="viewController">
@@ -28,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hrq-9t-w5q" secondAttribute="trailing" constant="20" id="7x9-bB-OEY"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hrq-9t-w5q" secondAttribute="trailing" constant="20" id="8ho-KS-cSd"/>
@@ -47,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="1282" y="-1060"/>
         </scene>
-        <!--Custom View Controller - Custom-->
+        <!--Custom-->
         <scene sceneID="Q7K-g0-DvW">
             <objects>
                 <viewController id="nne-87-7Zu" customClass="CustomViewController" sceneMemberID="viewController">
@@ -59,26 +64,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgm-w4-Gp8">
-                                <rect key="frame" x="20" y="111" width="728" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="[Custom] Type something:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tns-yp-ddo">
-                                <rect key="frame" x="20" y="82" width="728" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Custom] Type something:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tns-yp-ddo">
+                                <rect key="frame" x="282.5" y="502" width="203.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgm-w4-Gp8">
+                                <rect key="frame" x="282" y="592" width="203.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="mgm-w4-Gp8" secondAttribute="trailing" constant="20" id="7xh-MW-iSr"/>
-                            <constraint firstItem="mgm-w4-Gp8" firstAttribute="leading" secondItem="2mk-Q2-e5Z" secondAttribute="leading" constant="20" id="Txi-Cb-1LD"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mgm-w4-Gp8" secondAttribute="trailing" constant="20" id="hPt-Zt-WiI"/>
-                            <constraint firstItem="Tns-yp-ddo" firstAttribute="leading" secondItem="2mk-Q2-e5Z" secondAttribute="leading" constant="20" id="r6C-9y-VN7"/>
-                            <constraint firstItem="mgm-w4-Gp8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2mk-Q2-e5Z" secondAttribute="leading" constant="20" id="sra-it-U45"/>
-                            <constraint firstAttribute="trailing" secondItem="Tns-yp-ddo" secondAttribute="trailing" constant="20" id="zno-9Y-fPL"/>
+                            <constraint firstItem="mgm-w4-Gp8" firstAttribute="width" secondItem="Tns-yp-ddo" secondAttribute="width" id="4CR-Xl-8g2"/>
+                            <constraint firstItem="Tns-yp-ddo" firstAttribute="centerX" secondItem="2mk-Q2-e5Z" secondAttribute="centerX" id="duA-my-1le"/>
+                            <constraint firstItem="mgm-w4-Gp8" firstAttribute="top" secondItem="Tns-yp-ddo" secondAttribute="bottom" constant="69.5" id="k4T-Wr-uOU"/>
+                            <constraint firstItem="Tns-yp-ddo" firstAttribute="centerY" secondItem="2mk-Q2-e5Z" secondAttribute="centerY" id="u5D-x3-dxl"/>
+                            <constraint firstItem="mgm-w4-Gp8" firstAttribute="centerX" secondItem="Tns-yp-ddo" secondAttribute="centerX" id="xfl-0P-7R3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Custom" id="QFF-7R-4FY"/>
@@ -97,12 +101,13 @@
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="C50-Th-c61">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="gwU-hj-TGx" kind="relationship" relationship="viewControllers" id="mhE-Dg-9qd"/>
                         <segue destination="nne-87-7Zu" kind="relationship" relationship="viewControllers" id="mUf-il-i9n"/>
+                        <segue destination="gwU-hj-TGx" kind="relationship" relationship="viewControllers" id="mhE-Dg-9qd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2r-Wu-4Nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,9 +115,4 @@
             <point key="canvasLocation" x="308" y="-491"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

@@ -1,0 +1,9 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFIncrementalStore" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/InflectorKit" "${PODS_ROOT}/Headers/Public/TOMSCoreDataManager" "${PODS_ROOT}/Headers/Public/TOMSMorphingLabel" "${PODS_ROOT}/Headers/Public/TOMSSuggestionBar" "${PODS_ROOT}/Headers/Public/TransformerKit"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFIncrementalStore" "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/InflectorKit" "${PODS_CONFIGURATION_BUILD_DIR}/TOMSCoreDataManager" "${PODS_CONFIGURATION_BUILD_DIR}/TOMSMorphingLabel" "${PODS_CONFIGURATION_BUILD_DIR}/TOMSSuggestionBar" "${PODS_CONFIGURATION_BUILD_DIR}/TransformerKit"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFIncrementalStore" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/InflectorKit" -isystem "${PODS_ROOT}/Headers/Public/TOMSCoreDataManager" -isystem "${PODS_ROOT}/Headers/Public/TOMSMorphingLabel" -isystem "${PODS_ROOT}/Headers/Public/TOMSSuggestionBar" -isystem "${PODS_ROOT}/Headers/Public/TransformerKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFIncrementalStore" -l"AFNetworking" -l"InflectorKit" -l"TOMSCoreDataManager" -l"TOMSMorphingLabel" -l"TOMSSuggestionBar" -l"TransformerKit" -framework "CoreData" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "Security" -framework "SystemConfiguration"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods

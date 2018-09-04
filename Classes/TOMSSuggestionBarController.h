@@ -11,11 +11,11 @@
 @class TOMSSuggestionBarView;
 @class TOMSSuggestionBar;
 
-@interface TOMSSuggestionBarController : TOMSCoreDataCollectionViewController
+@interface TOMSSuggestionBarController : UICollectionViewController
 
 - (instancetype)initWithSuggestionBarView:(TOMSSuggestionBarView *)suggestionBarView;
 
-- (void)suggestableTextDidChange:(NSString *)context;
+- (void)suggestableArrayDidChange:(NSArray *)suggestions;
 
 - (void)didSelectSuggestionAtIndexPath:(NSIndexPath *)indexPath;
 

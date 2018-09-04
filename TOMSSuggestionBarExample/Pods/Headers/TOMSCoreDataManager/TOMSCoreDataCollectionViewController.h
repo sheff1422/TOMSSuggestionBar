@@ -1,1 +1,0 @@
-../../TOMSCoreDataManager/Classes/Visualization/ViewControllers/TOMSCoreDataCollectionViewController.h

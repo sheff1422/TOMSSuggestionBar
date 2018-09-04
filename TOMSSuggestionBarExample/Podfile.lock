@@ -8,17 +8,16 @@ PODS:
   - TOMSCoreDataManager (0.1.1):
     - AFIncrementalStore
   - TOMSMorphingLabel (0.1.0)
-  - TOMSSuggestionBar (0.1.0):
-    - TOMSCoreDataManager
+  - TOMSSuggestionBar (0.1.2):
     - TOMSMorphingLabel
   - TransformerKit (0.5.0):
-    - TransformerKit/Core
-    - TransformerKit/Cryptography
-    - TransformerKit/Data
-    - TransformerKit/Date
-    - TransformerKit/Image
-    - TransformerKit/JSON
-    - TransformerKit/String
+    - TransformerKit/Core (= 0.5.0)
+    - TransformerKit/Cryptography (= 0.5.0)
+    - TransformerKit/Data (= 0.5.0)
+    - TransformerKit/Date (= 0.5.0)
+    - TransformerKit/Image (= 0.5.0)
+    - TransformerKit/JSON (= 0.5.0)
+    - TransformerKit/String (= 0.5.0)
   - TransformerKit/Core (0.5.0)
   - TransformerKit/Cryptography (0.5.0):
     - TransformerKit/Core
@@ -38,17 +37,28 @@ DEPENDENCIES:
   - TOMSMorphingLabel
   - TOMSSuggestionBar (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFIncrementalStore
+    - AFNetworking
+    - InflectorKit
+    - TOMSCoreDataManager
+    - TOMSMorphingLabel
+    - TransformerKit
+
 EXTERNAL SOURCES:
   TOMSSuggestionBar:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  AFIncrementalStore: 70ca00126363d691a2569c831eb2b016f984643b
-  AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
-  InflectorKit: bb1f5c9feb01d17450b8bcdeb7ab1ef1832b2247
-  TOMSCoreDataManager: d2e6b2fb6c72692febb77c681cafe8c949c58308
-  TOMSMorphingLabel: 6b573950bbf8a898cdf85f76fe2e2379b11e3c35
-  TOMSSuggestionBar: 41fc426ce070ec9b3c723091857774ea87934162
-  TransformerKit: be60349177a82a0747c7fb7897c1367754d295d8
+  AFIncrementalStore: cd8783c8e7863afb53f3e0f5bb9a39b7e6fb8490
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  InflectorKit: 64497199e6764f4d8337cab7f700a77b13d76a73
+  TOMSCoreDataManager: 573b7d2aa07a0797b1d23899fc9a7c180e976746
+  TOMSMorphingLabel: b64d04f4d0b31b16aca0bf4f1814238af73b497e
+  TOMSSuggestionBar: bce86a9e6ad8a6c0689a88d5d3d71b364725a6a8
+  TransformerKit: f400f50e2767c31f62f9b845d270962425720c9e
 
-COCOAPODS: 0.33.1
+PODFILE CHECKSUM: 2dbd73b302744612f6889fca8a5a2f80fd94e69b
+
+COCOAPODS: 1.5.3

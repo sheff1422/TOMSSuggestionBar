@@ -9,7 +9,7 @@
 #import "CustomViewController.h"
 #import <TOMSSuggestionBar/TOMSSuggestionBar.h>
 
-@interface CustomViewController () <TOMSSuggestionDelegate, TOMSSuggestionDataSource>
+@interface CustomViewController () <TOMSSuggestionDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @end
 
@@ -19,25 +19,26 @@
 {
     [super viewDidLoad];
     
-    TOMSSuggestionBar *suggestionBar = [[TOMSSuggestionBar alloc] init];
-    [suggestionBar subscribeTextInputView:self.textField
-           toSuggestionsForAttributeNamed:@"name"
-                            ofEntityNamed:@"Person"
-                             inModelNamed:@"Model"];
+    TOMSSuggestionBar *suggestionBar = [[TOMSSuggestionBar alloc] initWithNumberOfSuggestionFields:3];
+    [suggestionBar subscribeTextInputView:self.textField];
     
     suggestionBar.delegate = self;
-    suggestionBar.dataSource = self;
+    [suggestionBar showArrayWith:@[@"23123123123ndlkajkljsadkl lkjd lkjslkada kld klasjlkjkl",
+                                  @"45654645645656 lkjd lkjslkada kld klasjlkjkl",
+                                  @"876876876876868 lkjd lkjslkada kld klasjlkjkl"]];
 }
 
 #pragma mark - TOMSSuggestionDelegate
 
 - (void)suggestionBar:(TOMSSuggestionBar *)suggestionBar
-  didSelectSuggestion:(NSString *)suggestion
-     associatedObject:(NSManagedObject *)associatedObject
-{
+  didSelectSuggestion:(NSString *)suggestion {
     NSString *replacement = [suggestion stringByAppendingString:@" "];
-    self.textField.text = [self.textField.text stringByReplacingCharactersInRange:[suggestionBar rangeOfRelevantContext]
-                                                                       withString:replacement];
+    self.textField.text = suggestion;
+}
+
+- (void)suggestionBar:(TOMSSuggestionBar *)suggestionBar
+        textDidChange:(NSString *)text {
+    
 }
 
 #pragma mark - TOMSSuggestionDataSource

@@ -21,10 +21,7 @@
     [super viewDidLoad];
     
     TOMSSuggestionBar *suggestionBar = [[TOMSSuggestionBar alloc] init];
-    [suggestionBar subscribeTextInputView:self.textField
-           toSuggestionsForAttributeNamed:@"name"
-                            ofEntityNamed:@"Person"
-                             inModelNamed:@"Model"];
+    [suggestionBar subscribeTextInputView:self.textField];
     
     self.textField.delegate = self;
 }

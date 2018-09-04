@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @class TOMSSuggestionBar;
-@class NSManagedObject;
 
 @protocol TOMSSuggestionDelegate <NSObject>
 
@@ -23,7 +22,15 @@
  @param associatedObject The instance fetched from CoreData that is represented by the tapped text.
  */
 - (void)suggestionBar:(TOMSSuggestionBar *)suggestionBar
-  didSelectSuggestion:(NSString *)suggestion
-     associatedObject:(NSManagedObject *)associatedObject;
+  didSelectSuggestion:(NSString *)suggestion;
+
+/**
+ Gets called when a text is changed.
+ 
+ @param suggestionBar The suggestionBar containing the tapped tile.
+ @param text The text filled in textfield.
+ */
+- (void)suggestionBar:(TOMSSuggestionBar *)suggestionBar
+  textDidChange:(NSString *)text;
 
 @end

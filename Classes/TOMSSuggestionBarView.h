@@ -19,8 +19,5 @@
 
 @property (nonatomic, strong) TOMSSuggestionBarController *suggestionBarController;
 @property (nonatomic, assign) NSInteger numberOfSuggestionFields;
-@property (nonatomic, strong) NSString *attributeName;
-@property (nonatomic, strong) NSString *entityName;
-@property (nonatomic, strong) NSString *modelName;
 
 @end

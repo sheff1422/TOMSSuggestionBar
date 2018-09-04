@@ -11,6 +11,12 @@
 #import "TOMSSuggestionBarCell.h"
 #import "TOMSSuggestionBar.h"
 
+@interface TOMSSuggestionBarController ()
+
+@property (strong, nonatomic) NSArray *suggestionsArray;
+
+@end
+
 @implementation TOMSSuggestionBarController
 
 #pragma mark - Initialization
@@ -19,6 +25,7 @@
 {
     self = [super init];
     if (self) {
+        self.suggestionsArray = @[];
         CGRect suggestionBarViewFrame = suggestionBarView.frame;
         self.collectionView = suggestionBarView;
         self.collectionView.frame = suggestionBarViewFrame;
@@ -28,66 +35,19 @@
 
 #pragma mark - Suggesting
 
-- (void)suggestableTextDidChange:(NSString *)context
-{
-    if (self.suggestionBar.dataSource && [self.suggestionBar.dataSource respondsToSelector:@selector(suggestionBar:predicateForContext:attributeName:)]) {
-        self.coreDataFetchController.predicate = [self.suggestionBar.dataSource suggestionBar:self.suggestionBar
-                                                                          predicateForContext:context
-                                                                                attributeName:[self attributeName]];
-    } else {
-        self.coreDataFetchController.predicate = [NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", [self attributeName], context];
-    }
-}
-
-- (NSManagedObject *)objectForIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger numberOfSuggestionFields = [self numberOfSuggestionFields];
-    if (numberOfSuggestionFields % 2 == 0) {
-        return [self.coreDataFetchController objectAtIndexPath:indexPath];
-    } else {
-        NSManagedObject *object;
-        
-        @try {
-            NSInteger row = (indexPath.row - floorf(numberOfSuggestionFields / 2.f)) * 2;
-            if (row < 0) {
-                row = -row - 1;
-            }
-            NSIndexPath *recalculatedIndexPath = [NSIndexPath indexPathForRow:row inSection:indexPath.section];
-            object = [self.coreDataFetchController objectAtIndexPath:recalculatedIndexPath];
-        }
-        @catch (NSException *exception) {
-            object = nil;
-        }
-        
-        return object;
-    }
+- (void)suggestableArrayDidChange:(NSArray *)suggestions {
+    self.suggestionsArray = suggestions;
+    [self.collectionView reloadData];
 }
 
 - (void)didSelectSuggestionAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self objectForIndexPath:indexPath];
-    if (object) {
-        NSString *suggestion = [object valueForKeyPath:[self attributeName]];
-        
-        if (self.suggestionBar.delegate && [self.suggestionBar.delegate respondsToSelector:@selector(suggestionBar:didSelectSuggestion:associatedObject:)]) {
-            [self.suggestionBar.delegate suggestionBar:self.suggestionBar
-                                   didSelectSuggestion:suggestion
-                                      associatedObject:object];
-        } else {
-            NSString *replacement = [suggestion stringByAppendingString:@" "];
-            NSRange contextRange = [self.suggestionBar rangeOfRelevantContext];
-            UITextPosition *beginning = self.suggestionBar.textInputView.beginningOfDocument;
-            UITextPosition *start = [self.suggestionBar.textInputView positionFromPosition:beginning
-                                                                                    offset:contextRange.location];
-            UITextPosition *end = [self.suggestionBar.textInputView positionFromPosition:start
-                                                                                  offset:contextRange.length];
-            UITextRange *replacementRange = [self.suggestionBar.textInputView textRangeFromPosition:start
-                                                                                         toPosition:end];
-            
-            [self.suggestionBar.textInputView replaceRange:replacementRange
-                                                  withText:replacement];
-        }
+    NSString *text;
+    if (indexPath.row + 1 <= self.suggestionsArray.count) {
+        text = self.suggestionsArray[indexPath.row];
     }
+    
+    [self.suggestionBar.delegate suggestionBar:self.suggestionBar didSelectSuggestion:text];
 }
 
 #pragma mark - Bridged Getters
@@ -97,10 +57,6 @@
     return((TOMSSuggestionBarView *)self.collectionView).numberOfSuggestionFields;
 }
 
-- (NSString *)attributeName
-{
-    return((TOMSSuggestionBarView *)self.collectionView).attributeName;
-}
 
 #pragma mark - UICollectionViewDelegate
 
@@ -138,43 +94,11 @@
     return [self numberOfSuggestionFields];
 }
 
-#pragma mark - TOMSCoreDataManagerDataSource
-
-- (NSString *)modelName
-{
-    return ((TOMSSuggestionBarView *)self.collectionView).modelName;
-}
-
-- (NSString *)entityName
-{
-    return ((TOMSSuggestionBarView *)self.collectionView).entityName;
-}
 
 - (NSString *)cellIdentifierForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * const cellIdentifier = @"kTOMSSuggestionBarCell";
     return [cellIdentifier stringByAppendingFormat:@"_%i", indexPath.row];
-}
-
-- (NSPredicate *)defaultPredicate
-{
-    if (self.suggestionBar.dataSource && [self.suggestionBar.dataSource respondsToSelector:@selector(suggestionBar:predicateForContext:attributeName:)]) {
-        return [self.suggestionBar.dataSource suggestionBar:self.suggestionBar
-                                        predicateForContext:@""
-                                              attributeName:[self attributeName]];
-    } else {
-        return [NSPredicate predicateWithFormat:@"%@.length > 0", [self attributeName]];
-    }
-}
-
-- (NSArray *)defaultSortDescriptors
-{
-    if (self.suggestionBar.dataSource && [self.suggestionBar.dataSource respondsToSelector:@selector(suggestionBar:sortDescriptorsForAttributeName:)]) {
-        return [self.suggestionBar.dataSource suggestionBar:self.suggestionBar
-                            sortDescriptorsForAttributeName:[self attributeName]];
-    } else {
-        return @[[NSSortDescriptor sortDescriptorWithKey:[self attributeName] ascending:YES]];
-    }
 }
 
 - (void)configureCell:(id)cell
@@ -186,21 +110,22 @@
     suggestionBarCell.suggestionBarController = self;
     
     NSString *text;
-    @try {
-        NSManagedObject *object = [self objectForIndexPath:indexPath];
-        if (object) {
-            text = [object valueForKeyPath:[self attributeName]];
-        } else {
-            @throw [NSException exceptionWithName:@"TOMSObjectNotFoundException"
-                                           reason:@"Did not fetch enaugh data to fill all of the cells."
-                                         userInfo:nil];
-        }
-    }
-    @catch (NSException *exception) {
-        text = @"";
+    if (indexPath.row + 1 <= self.suggestionsArray.count) {
+        text = self.suggestionsArray[indexPath.row];
     }
     
     suggestionBarCell.textLabel.text = text;
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [self cellIdentifierForItemAtIndexPath:indexPath];
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier
+                                                                           forIndexPath:indexPath];
+    
+    [self configureCell:cell forIndexPath:indexPath];
+    return cell;
+}
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TOMSSuggestionDataSource.h"
 #import "TOMSSuggestionDelegate.h"
 #import "UIControl+TOMSSuggestionBar.h"
 
@@ -15,15 +14,10 @@
 
 - (instancetype)initWithNumberOfSuggestionFields:(NSInteger)numberOfSuggestionFields;
 
-- (BOOL)subscribeTextInputView:(UIControl<UITextInput> *)textInputView
-toSuggestionsForAttributeNamed:(NSString *)attributeName
-                 ofEntityNamed:(NSString *)entityName
-                  inModelNamed:(NSString *)modelName;
-
-- (NSRange)rangeOfRelevantContext;
+- (BOOL)subscribeTextInputView:(UIControl<UITextInput> *)textInputView;
+- (void)showArrayWith:(NSArray *)suggestions;
 
 @property (nonatomic, weak) UIControl<UITextInput> *textInputView;
-@property (nonatomic, weak) id<TOMSSuggestionDataSource> dataSource;
 @property (nonatomic, weak) id<TOMSSuggestionDelegate> delegate;
 
 @property (nonatomic, strong) UIColor *backgroundColor;

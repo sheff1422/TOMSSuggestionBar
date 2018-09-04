@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32CBEE52E9ED42D2916B3F77 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B18CAB7EAB8485B8BF395E5 /* libPods.a */; };
+		1F6ABD1C128B23ACF6192422 /* libPods-TOMSSuggestionBarExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D334295370D2066FAF3828 /* libPods-TOMSSuggestionBarExample.a */; };
 		A646EC501950FD6C00AA2C7B /* ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A646EC4F1950FD6C00AA2C7B /* ipad.storyboard */; };
 		A6544B521950D213006B986F /* iphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6544B511950D213006B986F /* iphone.storyboard */; };
 		A6544B571950EEBD006B986F /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6544B561950EEBD006B986F /* CustomViewController.m */; };
@@ -31,7 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B18CAB7EAB8485B8BF395E5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		65D334295370D2066FAF3828 /* libPods-TOMSSuggestionBarExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TOMSSuggestionBarExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E12DDDEEDD0E7F7187BD688 /* Pods-TOMSSuggestionBarExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TOMSSuggestionBarExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TOMSSuggestionBarExample/Pods-TOMSSuggestionBarExample.debug.xcconfig"; sourceTree = "<group>"; };
+		93F0A7DE7726B126F9177259 /* Pods-TOMSSuggestionBarExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TOMSSuggestionBarExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TOMSSuggestionBarExample/Pods-TOMSSuggestionBarExample.release.xcconfig"; sourceTree = "<group>"; };
 		A646EC4F1950FD6C00AA2C7B /* ipad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ipad.storyboard; sourceTree = "<group>"; };
 		A6544B511950D213006B986F /* iphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iphone.storyboard; sourceTree = "<group>"; };
 		A6544B551950EEBD006B986F /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
@@ -50,7 +52,6 @@
 		A6C35F37194D16770089EFB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A6C35F39194D169D0089EFB0 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		A6C35F3A194D169D0089EFB0 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		BB0BB984AF66413FAF483A16 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32CBEE52E9ED42D2916B3F77 /* libPods.a in Frameworks */,
+				1F6ABD1C128B23ACF6192422 /* libPods-TOMSSuggestionBarExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		177219D6882A4089BFC690D1 /* Frameworks */ = {
+		639A4CF81B0114F2DC258A9C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7B18CAB7EAB8485B8BF395E5 /* libPods.a */,
+				6E12DDDEEDD0E7F7187BD688 /* Pods-TOMSSuggestionBarExample.debug.xcconfig */,
+				93F0A7DE7726B126F9177259 /* Pods-TOMSSuggestionBarExample.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		A6C35EF8194CFB990089EFB0 = {
@@ -86,8 +88,8 @@
 				A6C35F03194CFB990089EFB0 /* TOMSSuggestionBarExample */,
 				A6C35F1A194CFB990089EFB0 /* TOMSSuggestionBarExampleTests */,
 				A6C35F02194CFB990089EFB0 /* Products */,
-				BB0BB984AF66413FAF483A16 /* Pods.xcconfig */,
-				177219D6882A4089BFC690D1 /* Frameworks */,
+				639A4CF81B0114F2DC258A9C /* Pods */,
+				D6CA9D7812002DEFB9E3A0CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +156,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		D6CA9D7812002DEFB9E3A0CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65D334295370D2066FAF3828 /* libPods-TOMSSuggestionBarExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,11 +171,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6C35F21194CFB990089EFB0 /* Build configuration list for PBXNativeTarget "TOMSSuggestionBarExample" */;
 			buildPhases = (
-				436357291A154245BB0E98AA /* Check Pods Manifest.lock */,
+				1A4D649A975F427DD63AF589 /* [CP] Check Pods Manifest.lock */,
 				A6C35EFD194CFB990089EFB0 /* Sources */,
 				A6C35EFE194CFB990089EFB0 /* Frameworks */,
 				A6C35EFF194CFB990089EFB0 /* Resources */,
-				44FC9BA5AE0442CDB958A5CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,34 +262,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		436357291A154245BB0E98AA /* Check Pods Manifest.lock */ = {
+		1A4D649A975F427DD63AF589 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TOMSSuggestionBarExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		44FC9BA5AE0442CDB958A5CC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -396,7 +393,7 @@
 		};
 		A6C35F22194CFB990089EFB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB0BB984AF66413FAF483A16 /* Pods.xcconfig */;
+			baseConfigurationReference = 6E12DDDEEDD0E7F7187BD688 /* Pods-TOMSSuggestionBarExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -411,7 +408,7 @@
 		};
 		A6C35F23194CFB990089EFB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB0BB984AF66413FAF483A16 /* Pods.xcconfig */;
+			baseConfigurationReference = 93F0A7DE7726B126F9177259 /* Pods-TOMSSuggestionBarExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
